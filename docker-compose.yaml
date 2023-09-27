@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  sisfin-mysql:
+    image: mysql:8.0
+    container_name: con_sisfin_mysql_dev
+    restart: always
+    env_file:
+      - ../sisfin-config/sisfin-mysql.env
+    ports:
+      - 3307:3306
+    networks:
+      - net_sisfin_dev
+    volumes:
+      - vol_sisfin_mysql_dev:/var/lib/mysql
+
+volumes:
+  vol_sisfin_mysql_dev:
+    external: true
+networks:
+  net_sisfin_dev:
+    name: net_sisfin_dev
