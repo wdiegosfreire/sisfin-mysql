@@ -8,7 +8,7 @@ services:
     env_file:
       - ../sisfin-config/sisfin-mysql.env
     ports:
-      - 3307:3306
+      - 3306:3306
     networks:
       - net_sisfin_dev
     volumes:
